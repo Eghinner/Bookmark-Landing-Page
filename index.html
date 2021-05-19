@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Bookmark</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <img src="images/logo-bookmark.svg"></img>
+    <ul>
+      <li>Features</li>
+      <li>Pricing</li>
+      <li>Contact</li>
+      <li class="btn orange">Login</li>
+    </ul>
+  </nav>
+  <div class="banner">
+    <div>
+    <div class="h1 dark">
+        A Simple Bookmark Manager
+    </div>
+    <div class="text">
+        A clean and simple interface to organize your favourite websites. Open a new 
+        browser tab and see your sites load instantly. Try it for free.
+    </div>
+    
+    <div class="get">
+        Get it on Chrome
+    </div>
+    <div class="get">
+        Get it on Firefox
+    </div>
+    </div>
+    <div class="pack-img">
+      <img src="images/illustration-hero.svg" alt="">
+      <div class="my-svg blue right"></div>
+    </div>
+  </div>
+
+
+  <div class="banner2">
+    <div class="h2 dark">
+      Features
+    </div>
+    <div class="text">
+      Our aim is to make it quick and easy for you to access your favourite websites. 
+      Your bookmarks sync between your devices so you can access them on the go.
+    </div>
+  </div>
+  <div class="tab">
+    <div 
+      class="tab-options">Simple Bookmarking</div>
+    <div class="tab-options">Speedy Searching</div>
+    <div class="tab-options">Easy Sharing</div>
+  </div>
+  <div class="banner3">
+    
+  <div class="pack-img">
+      <img src="images/illustration-features-tab-1.svg" alt="">
+      <div class="my-svg blue left"></div>
+  </div>
+  <div class="side">
+    <div class="h2 dark">
+      Bookmark in one click
+    </div>
+<div class="text">
+  Organize your bookmarks however you like. Our simple drag-and-drop interface 
+  gives you complete control over how you manage your favourite sites.
+</div>
+  <br>
+    <div class="btn blue">
+       More Info
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+  <div style="display: none;">
+  <div class="pack-img">
+      <img src="images/illustration-features-tab-1.svg" alt="">
+      <div class="my-svg blue left"></div>
+  </div>
+    <div class="h1 dark">
+    Intelligent search
+    </div>
+  Our powerful search feature will help you find saved sites in no time at all. 
+  No need to trawl through all of your bookmarks.
+
+  More Info
+  </div>
+  <div style="display: none;">
+  <div class="pack-img">
+      <img src="images/illustration-features-tab-1.svg" alt="">
+      <div class="my-svg"></div>
+  </div>
+    <div class="h1 dark">
+      Share your bookmarks
+    </div>
+  Easily share your bookmarks and collections with others. Create a shareable 
+  link that you can send at the click of a button.
+
+  More Info
+  </div>
+
+
+
+<div class="banner2">
+<div class="h2 dark">
+
+  Download the extension</div>
+<div class="text">
+  We’ve got more browsers in the pipeline. Please do let us know if you’ve 
+  got a favourite you’d like us to prioritize.
+</div></div>
+
+
+<div class="banner4">
+  <div class="card1">
+    <img src="images/logo-chrome.svg" alt="">
+    <div class="h3 dark">
+  Add to Chrome</div>
+  <div class="text">
+  Minimum version 62</div>
+  <img src="images/bg-dots.svg" alt="">
+  <div class="btn blue">
+  Add & Install Extension
+  </div>
+  </div>
+  <div class="card2">
+    <img src="images/logo-firefox.svg" alt="">
+    <div class="h3 dark">
+  Add to Firefox</div>
+  <div class="text">
+  Minimum version 55</div>
+  <img src="images/bg-dots.svg" alt="">
+  <div class="btn blue">
+  Add & Install Extension
+  </div>
+  </div>
+  <div class="card3">
+    <img src="images/logo-opera.svg" alt="">
+    <div class="h3 dark">
+  Add to Opera</div>
+  <div class="text">
+  Minimum version 46</div>
+  <img src="images/bg-dots.svg" alt="">
+  <div class="btn blue">
+  Add & Install Extension
+  </div>
+  </div>
+</div>
+
+
+<div class="banner2">
+  <div class="h2 dark">
+  Frequently Asked Questions
+  </div>
+  <div class="text">
+  Here are some of our FAQs. If you have any other questions you’d like 
+  answered please feel free to email us.
+  </div>
+</div>
+  <div class="banner2" x-data="{selected:null}">
+  <!-- Question 1 -->
+  <div
+  class="question" 
+  @click="selected !== 1 ? selected = 1 : selected = null">
+    <p>
+  What is Bookmark?
+</p><img src="images/icon-arrow.svg" alt="" 
+  x-bind:class="selected == 1 ? 'rota' : ''">
+</div>
+
+  <!-- Answer 1 -->
+  <div class="answer" 
+  x-ref="container1"
+  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
+  justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+  </div>
+  <!-- Question 2 -->
+  <div  
+  class="question" 
+  @click="selected !== 2 ? selected = 2 : selected = null">
+    <p>
+  How can I request a new browser?
+</p><img src="images/icon-arrow.svg" alt="" x-bind:class="selected == 2 ? 'rota' : ''">  </div>
+
+  <!-- Answer 2 -->
+  <div class="answer" style="" 
+  x-ref="container2"
+  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+  Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
+  Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
+  ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
+  Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+  </div>
+  <!-- Question 3 -->
+  <div class="question" @click="selected !== 3 ? selected = 3 : selected = null">
+    <p>
+  Is there a mobile app?
+</p><img src="images/icon-arrow.svg" alt="" x-bind:class="selected == 3 ? 'rota' : ''">  </div>
+
+  <!-- Answer 3 -->
+  <div class="answer" style="" 
+  x-ref="container3"
+  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+  Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
+  urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
+  sollicitudin ex et ultricies bibendum.
+  </div>
+  <!-- Question 4 -->
+  <div class="question" @click="selected !== 4 ? selected = 4 : selected = null">
+    <p>
+  What about other Chromium browsers?
+</p><img src="images/icon-arrow.svg" alt="" x-bind:class="selected == 4 ? 'rota' : ''">  </div>
+
+  <!-- Answer 4 -->
+  <div class="answer" style="" 
+  x-ref="container4"
+  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+  Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+  vitae neque eget nisl gravida pellentesque non ut velit.
+  </div>
+  </div>
+  <div class="banner2" style="display: block;">
+    <div class="btn blue">
+  More Info
+    </div>
+  </div>
+    </div>
+
+    <div class="contact blue">
+      <div class="content">
+      <div>
+        <div class="light">
+          35,000+ already joined
+        </div>
+        <div class="h2 light">
+          Stay up-to-date with what we’re doing
+        </div>
+        <input type="text">
+        <div class="btn orange">
+          Contact Us
+        </div>
+      </div>
+    </div>
+</div>
+<footer>
+  <div>
+  <img src="images/logo-bookmark.svg" alt="" style="color: #fff;">
+  <p>Features</p>
+  <p>Pricing</p>
+  <p>Contact</p>
+  </div>
+  <div>
+  <img src="images/icon-twitter.svg" alt="">
+  <img src="images/icon-facebook.svg" alt="">
+  </div>
+</footer>
+
+
+</body>
+</html>
